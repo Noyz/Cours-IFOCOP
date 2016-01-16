@@ -1,0 +1,148 @@
+<!--
+	La valeur pour le positionnement peut être négative. Cela permet, par exemple, de masquer un élément qui s'affichera ensuite.
+-->
+
+<!--
+	Reproduisez la capture d'écran Exercice 52a.jpg. Au survol d'une flèche (code html : &rarr;), l'entrée du menu s'affiche ainsi : Exercice 52b.jpg.
+  Astuce : mettez la flèche dans un span pour faire un espace avec le texte.
+-->
+
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link type="text/css" href="css/stylesheet.css" rel="stylesheet">
+    <title>Exercice</title>
+  </head>
+  <body>
+    <div id="header">
+      <h1>Titre</h1>
+    </div>
+    <div id="hiddenMenu">
+        <ul>
+          <li>ACTION<span>&rarr;</span></li>
+          <li>ACTUALITE<span>&rarr;</span></li>
+          <li>INFORMATION<span>&rarr;</span></li>
+          <li>CONTACT<span>&rarr;</span></li>
+        </ul>
+    </div>
+    <div id="content">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sollicitudin congue dolor, egestas semper felis aliquet vel. Aenean orci quam, blandit in accumsan et, porttitor eget nisi. Quisque vitae nisi feugiat, vehicula odio ut, ullamcorper turpis. Praesent faucibus sagittis venenatis. Nullam non bibendum neque, in ultricies ligula. Nulla ac est orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi placerat rhoncus volutpat. Pellentesque ac aliquam elit, vel bibendum sem.Vestibulum et blandit tortor. Phasellus auctor, lacus vitae faucibus sodales, nisi magna porttitor ligula, nec tincidunt mauris quam a ipsum. Donec erat quam, scelerisque in molestie a, aliquam in magna. Phasellus ac ultricies eros, nec rhoncus nisi. Proin sodales velit massa, id rhoncus tortor scelerisque quis. Curabitur tincidunt elit in ante mattis eleifend. Quisque dapibus felis elit, vitae rutrum lorem malesuada eget. Maecenas vitae turpis nec lectus rhoncus porta at et urna. Nullam nec nulla orci. In pharetra tellus id lectus venenatis, a posuere ligula hendrerit. Aenean viverra quis orci vel tristique. Quisque condimentum, est sed tincidunt blandit, lorem massa tristique urna, et sollicitudin tellus ipsum eu metus. 
+      </p>
+      <p>
+        Fusce tincidunt molestie nibh, dignissim suscipit metus ultrices vitae. Aliquam feugiat, magna at venenatis euismod, nibh felis congue orci, a placerat justo lorem in leo. Duis dictum auctor interdum. Phasellus vehicula augue non nulla blandit tincidunt. Phasellus a mattis sapien. Duis sed fringilla risus, id fermentum metus. Ut vehicula sodales turpis, sit amet consequat libero. Phasellus ut tempus elit, a tincidunt neque. Aenean interdum gravida mauris, sed placerat ipsum bibendum non. Proin quis risus augue. Curabitur volutpat quam nibh, sit amet ultrices nisi eleifend quis. Duis lacinia posuere commodo. Aliquam euismod, augue et maximus mattis, tellus ipsum semper ipsum, ut efficitur tellus nisl at purus. In nec sapien at nisl sollicitudin consectetur. Sed id ligula sed nisl iaculis accumsan vel a mi. Fusce vel tempus ligula, et pulvinar metus.non magna at libero mollis tempus vel vitae neque. Aliquam consequat congue leo ut malesuada. Duis cursus ut tortor quis sagittis. Etiam rutrum diam eget lacinia tristique. Maecenas in suscipit enim, eget vehicula odio. Aliquam lacinia tortor in nulla semper lobortis. Vestibulum posuere mi vitae ullamcorper viverra. Phasellus commodo tortor lobortis convallis malesuada
+        </p>
+        <p>
+          Nulla ultrices augue rhoncus dapibus laoreet. Donec dictum sodales diam. Donec blandit mi eget enim imperdiet, vitae lacinia leo posuere. Duis dolor nibh, sodales nec nibh et, ultrices scelerisque quam. Vivamus quis suscipit nunc. Nullam dapibus venenatis interdum. Sed eget iaculis ex, sed vehicula odio. Nulla et accumsan velit. Sed et eleifend lorem, vel finibus enim. Morbi vitae egestas nisl. Vestibulum id hendrerit justo. Praesent placerat nunc quis fermentum hendrerit.Sed finibus ligula nibh, ac fringilla diam faucibus eget. Pellentesque mollis est ut accumsan dapibus. Ut fringilla est felis, quis lorem fringilla gravida malesuada quis augue. Vivamus tellus libero, fermentum vitae ipsum et, venenatis facilisis libero. Suspendisse molestie interdum diam, quis fermentum ligula vulputate sed. Fusce varius efficitur tortor, ullamcorper pulvinar enim maximus nec.
+        </p>
+        <p>
+            Praesent eu est sit amet ex bibendum venenatis sed venenatis risus. Etiam pellentesque tellus est, sit amet hendrerit orci pharetra id. Duis eu ultricies turpis, in sollicitudin magna. Morbi malesuada nisi sed ligula gravida, eu ornare magna laoreet. Cras massa tellus, auctor a enim vitae, semper laoreet mauris. In at orci rhoncus, gravida mi sed, vulputate massa. In fermentum nisi scelerisque ultricies euismod. Maecenas a tempus dolor. Mauris vestibulum feugiat risus sed fringilla. Donec elementum, lacus nec imperdiet venenatis, enim metus cursus metus, vitae molestie arcu dui id quam. Ut a molestie nibh. Nunc feugiat a quam vel laoreet. Quisque laoreet ac metus nec vestibulum. Duis posuere porttitor 
+        </p>
+    </div>
+  </body>
+</html>
+
+<!--
+
+  body {
+  background-color: #3f89a6;
+  margin:0 ;
+  
+}
+
+#header {
+  height : 80px;
+  background-color: #215b73;
+  text-align: center;
+  line-height: 75px;
+  color : #f3ac76;
+  font-size:30px;
+  font-family:arial, sans-serif;
+  font-style:italic;
+}
+
+h1 {
+  margin-top:20px;
+}
+
+#hiddenMenu {
+  width:40px;
+  height:150px;
+  background-color: #215b73;
+  border-bottom-right-radius:10px;
+  border-top-right-radius:10px;
+  margin-top:50px;
+  display:inline-block;
+  position:relative;
+}
+ul{
+  padding:0;
+  margin-top:5px;
+  position:relative;
+}
+
+li{
+  list-style: none;
+  margin-bottom:15px;
+  background-color:#215b73;
+  color:#f1b88b;
+}
+
+li:first-child {
+  position:absolute;
+  right:24px;
+  border-radius:5px;
+}
+
+li:first-child:hover {
+  right:-40px;
+}
+
+
+
+li:nth-child(2) {
+  position:absolute;
+  top:30px;
+  right:24px;
+  border-radius:5px;
+}
+
+li:nth-child(2):hover{
+  right:-74px;
+}
+
+li:nth-child(3) {
+  position:absolute;
+  top:60px;
+  right:24px;
+  border-radius:5px;
+}
+
+li:nth-child(3):hover {
+  right:-91;
+}
+
+li:nth-child(4) {
+  position:absolute;
+  top:90px;
+  right:24px;
+  border-radius:5px;
+}
+
+li:nth-child(4):hover  {
+  right:-54px;
+}
+
+#content {
+  height:100%;
+  width: 50%;
+  float:right;
+  background-color: #f6ddc7;
+  padding:10px;
+  margin-right:25%;
+}
+
+
+
+-->

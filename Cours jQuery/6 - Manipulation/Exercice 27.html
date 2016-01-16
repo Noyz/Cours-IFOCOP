@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>jQuery : Exercice 27</title>
+		<link rel="stylesheet" href="../src/styles1.css" type="text/css"/>
+    <style>
+    #cube {
+      height: 370px;
+      position:relative;
+    }
+    span {
+      background-color:blue;
+      border-radius:100%;
+      height:40px;
+      width:40px;
+    }
+    #firstSpan{
+      margin-left: -490px;     
+    }
+
+    #secondSpan{
+      margin-left: -513px;
+      margin-right: -490px;
+    }
+
+  /*#secondSpan{
+  position: absolute;
+  top: 298px;
+  left: 5px;
+  }
+
+  #thirdSpan{
+  position: absolute;
+  top: 630px;
+  left: 310px;
+  }
+
+  #fourthSpan{
+  position: absolute;
+  top: 630px;
+  left: 810px;
+  }*/
+    
+
+   
+    </style>
+		<script type="text/javascript" src="../jquery-1.11.3.js"></script>
+		<script type="text/javascript">
+      /*********************************
+      ***********PRESENTATION***********
+      **********************************
+        jQuery permet d'ajouter du contenu avant ou après un élément de la façon suivante :
+        _ append() : insère du contenu à la fin de la sélection ;
+      	_ prepend() : insère du contenu au début de la sélection ;
+      	_ before() : insère du contenu avant la sélection ;
+      	_ after() : insère du contenu après la sélection.*/
+      
+
+      /**********************************
+      *************EXERCICES*************
+      ***********************************
+      ** 1 **
+      	Créez une page contenant trois ensembles titre / paragraphe.
+      	Ajoutez un trait de séparation (<hr/>) au chargement du document.
+
+      	Utilisez la méthode after().
+      */
+        /*$(document).ready(function(){
+          $('p').after('<hr/>');
+        });*/
+      /*;
+      ** 2 **
+      	Ajoutez une image entre deux paragraphes. Au chargement du document, un cercle plein est placé à chaque coin de l'image, derrière celle-ci (indice : mettez l'image dans une div. Cette div contiendra quatre span positionnées aux angles de cette div).
+
+      	Utilisez prepend() et append().
+      */
+
+       $(document).ready(function(){
+          $('p').after('<hr/>');
+          $(document.children[0].children[1].children[6]).after("<div id='cube'></div>");
+          $('#cube').append("<img src='../img/katana.jpg' id='katanaa'>");
+          $(document.children[0].children[1].children[7]).before("<span id='firstSpan'>1</span");
+          $(document.children[0].children[1].children[7]).after("<span id='secondSpan'>2</span");
+          $('#cube').append("<span id='thirdSpan'>3</span");
+          $('#cube').prepend("<span id='fourthSpan'>4</span");
+        });
+    </script>
+	</head>
+	<body>
+
+      <h1>Titre 1</h1>
+      <p>Paragraphe 1</p>
+
+      <h1>Titre2 </h1>
+      <p>Paragraphe 2</p>
+
+      <h1>Titre3 </h1>
+      <p>Paragraphe 3</p>
+
+      
+
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

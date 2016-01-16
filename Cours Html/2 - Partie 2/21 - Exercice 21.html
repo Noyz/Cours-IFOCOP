@@ -1,0 +1,49 @@
+<!--
+Il est possible d'utiliser d'autres polices que celles présentes sur le poste client.
+Pour se faire, il est nécessaire de fournir la police au moyen de la règle CSS @font-face (voir https://developer.mozilla.org/fr/docs/Web/CSS/@font-face).
+Il est nécessaire d'utiliser plusieurs formats de police, tous les navigateurs ne supportant pas le même format de police (cf. tableau "Browser Support" http://www.w3schools.com/cssref/css3_pr_font-face_rule.asp)
+Après cela, on utilise la police dans les balises souhaitées au moyen de la déclaration présentée dans l'exercice précédent.
+-->
+<!--
+	1 - Créez un document.
+	2 - Sur le site http://www.fontsquirrel.com/. Téléchargez deux polices :
+		A - Dans Font Filter, choisissez Webfont.
+		B - Choisisser une police.
+		C - Sur la fiche de la police, choisissez Webfont Kit.
+		D - Téléchargez en choisissant tous les formats.
+	3 - Ajoutez bien les deux règles @font-face au début du CSS.
+	4 - Créez deux paragraphes.
+	5 - Appliquez une police différente à chaque paragraphe.
+-->
+<!DOCTYPE>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link type="text/css" href="css/stylesheet.css" rel="stylesheet">
+		<title>Exercice</title>
+	</head>
+	<body>
+		<p>URL pour la localisation du fichier de police de caractères distant, ou le nom d'une police de caractère sur l'ordinateur de l'utilisateur dans la forme local</p>
+		<p>Spécifie le nom d'une police de caractères qui sera utilisée comme une valeur font-face pour les propriétés des polices</p>
+	</body>
+</html>
+
+<!--
+@font-face {
+    font-family: '2dumbregular';
+    src: url('../web fonts/2dumb_regular_macroman/2Dumb-webfont.eot');
+    src: url('../web fonts/2dumb_regular_macroman/2Dumb-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../web fonts/2dumb_regular_macroman/2Dumb-webfont.woff') format('woff'),
+         url('../web fonts/2dumb_regular_macroman/2Dumb-webfont.ttf') format('truetype'),
+         url('../web fonts/2dumb_regular_macroman/2Dumb-webfont.svg#2dumbregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+p {
+	font-size:50px;
+	font-family:"2dumbregular", serif;
+}-->

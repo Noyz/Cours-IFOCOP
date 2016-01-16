@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Exemple</title>
+    <script>
+      /*********************/
+      //JSON : Notation Objet JavaScript
+      var avion = {
+        kerosene:100,
+        modele:'A380',
+        'fabricant/industriel':'Airbus',
+        vole:function(){
+          this; //référence à l'objet avion lui même
+          var consommation = this.reacteur();
+          if(consommation == 'forte consommation'){
+            this['kerosene'] = this.kerosene - 10;
+          }else{
+            this.kerosene = this.kerosene - 1;
+          }
+        },
+        reacteur:function(){
+          if(this.modele == 'A380'){
+            return 'forte consommation';
+          }else{
+            return 'faible consommation';
+          }
+        },
+        9:'Bruce Willis',
+        soute:{
+          compartiment1: [{valise1:{poche:'slips',reste:'habits' }, valise2:'des trucs'},'Vélo'],
+          compartiment2: 'Animaux',
+          bruit:function(){
+            this; //référence à l'objet soute lui même
+          }
+        }
+      };
+
+      avion[9]; //'Bruce Willis'; pas de notation alternative
+      avion['fabricant/industriel']; //'Airbus'; pas de notation alternative
+
+      avion.vole();
+      //ou
+      avion['vole']();
+      
+      avion.soute.bruit();
+      //ou
+      avion['soute']['bruit']();
+
+      avion.soute.compartiment1[0].valise1.poche; //'slips'
+      //ou
+      avion['soute']['compartiment1'][0]['valise1']['poche'];
+      
+      avion.soute.compartiment1[0].valise1.poche = 'caleçons';
+      //ou
+      avion['soute']['compartiment1'][0]['valise1']['poche'] = 'caleçons'
+
+      avion.soute.compartiment1[0].valise1.nouveau = 'cadenas';
+      //ou
+      avion['soute']['compartiment1'][0]['valise1']['nouveau'] = 'cadenas'
+      
+      avion.soute.compartiment1[0].valise1.bruitSuspect = function(){
+        this; //référence à la valise1
+        alert('tic tac !');
+      };
+      //ou
+      avion['soute']['compartiment1'][0]['valise1']['bruitSuspect'] = function(){
+        this; //référence à la valise1
+        alert('tic tac !');
+      };
+      
+
+      /***************************************/
+      //Objets de type Array
+      var tab =[1,2,4,8]; 
+      tab.length; //4
+      tab[tab.length]; //equivalent à tab[4] => undefined
+
+      /** A mettre
+      var obj = {};
+      for(i = 1; i <= 12;i++){
+        obj['Robot' + i] = new Robot();
+        //On créé obj['Robot1'], obj['Robot2'], obj['Robot3'], ...
+      };
+      
+      obj.Robot10;
+      **/
+
+      /***************************************/
+      //"Fonction Usine" ou "Factory Function" : fonction qui retourne un nouvel objet
+      var usineDeVoiture = function(a ,b ,c){
+
+        //Fonction Constructeur
+        var Voiture = function(a, b, c){
+
+          if(a == 'Audi'){
+            var logicielVolkswagen = true; //propriété PRIVEE (inaccessible depuis l'extérieur de l'objet)
+          }else{
+            var logicielVolkswagen = false;
+          }
+
+          this.logiciel = function(valeur){ //Getter/Setter
+             if(valeur == undefined){
+               return logicielVolkswagen;
+             }else{
+               logicielVolkswagen = valeur;
+             }
+          };
+
+          this.marque = a || 'Lada'; //propriété PUBLIQUE (directement attachée à l'objet)
+          this.puissance = b || '2CV';
+          this.places = 5; //propriete par défaut
+          this.couleur = c || 'blanc';
+          this.vitesseMax = 220; //propriété par défaut
+          this.estNeuve = true; //propriété par défaut
+          this.consommation = 5; //propriété par défaut
+          this.reservoir = 100; //propriété par défaut
+          this.roule = function(){
+            if(logicielVolkswagen){ //Ici on a le droit d'utiliser les propriétés privées.
+              this.reservoir = this.reservoir - this.consommation * 10;
+            }else{
+              this.reservoir = this.reservoir - this.consommation;
+            };
+          };
+        }; //déclaration de la fonction construction
+
+        //Utilisation : Object <= new Voiture([a[,b[,c]]])
+
+        return new Voiture(a, b, c);
+      };
+      //Création d'objet : Instanciation d'objet
+      var titine = usineDeVoiture('Audi', '12CV', 'Rouge');
+      var tuture = usineDeVoiture('Rono', '2CV', 'Verte');
+      //************
+      /* Le même objet déclaré en JSON
+      var a = 'Audi';
+      var b = '12CV';
+      var c = 'Rouge'; 
+      var titine = {
+        marque:a,
+        puissance:b,
+        places:5, //propriete par défaut
+        couleur:c,
+        vitesseMax:220, //propriété par défaut
+        estNeuve:true, //propriété par défaut
+        consommation:5, //propriété par défaut
+        reservoir:100, //propriété par défaut
+        roule:function(){
+          this.reservoir = this.reservoir - this.consommation;
+        }
+      };
+      */
+
+      /********************************/
+      //Prototypage
+      //Avec Object.create();
+      var lAncetre = {
+        age:'Super vieux',
+        visage:'Ridé',
+        sourire:'Edenté',
+        sagesse:'Elevée'
+      };
+
+      var disciple = Object.create(lAncetre, {
+        visage:{
+          value:'lifté',
+          writable:true
+        },sourire:{
+          value:'denté',
+          writable:true
+        },sagesse:{
+          value:'petit con',
+          writable:true
+        },prenom:{
+          value:'Michel',
+          writable: true,
+          enumerable: true
+        }
+      });
+
+      //Avec la propriété prototype des objet Fonction
+      
+      var Constructeur = function(){
+        this.propriete = 99;
+      };
+
+      var AutreConstructeur = function(){
+        this.autrePropriete = 1;
+      };
+
+      AutreConstructeur.prototype = new Constructeur();
+
+      var ACDC = new AutreConstructeur();
+      
+      /********************************/
+      //Objets fondamentaux
+      Object; //Un objet fondamental
+
+      String; //une fonction/objet constructeur fondamentale
+      var test = new String('Bonjour le monde !'); //object
+      var autreTest = 'Bonjour la lune !'; //string
+      encoreAutreTest = autreTest;
+
+      Math;
+      new Date();
+      
+      new Array('a',true,45);
+      var ici = ['a', true, 45];
+      var la = ici;
+
+      window
+      </script>
+    </script>
+  </head>
+  <body>
+    Hello World !
+  </body>
+</html>

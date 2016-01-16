@@ -1,0 +1,23 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link type="text/css" href="css/stylesheet.css" rel="stylesheet">
+		<title>Exercice Angular</title>
+		<script>
+			'use strict';
+		</script>
+	</head>
+	<body>
+		<p>Hello World!</p>
+		<p>Je veux calculer {{6 + 3}} !</p>
+		<p>Je ne veux pas calculer 6 + 3 ! </p>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script>
+		angular.module('superChoucroute', []); // setter
+		angular.module('superChoucroute'); // getter
+		var monModuleAuChou = angular.module('superChoucroute', []);
+		angular.bootstrap(window.document, ['monModuleAuChou'], {strictDi:true});
+	</script>
+	</body>
+</html>

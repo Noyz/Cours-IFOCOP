@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>AngularJS : Les Directives : Exercice 0</title> 
+    <script>
+      
+    </script>
+  </head>
+  <body>
+	<div>
+		<h4>Les contrôleurs</h4>
+		<div ng-controller="monControleur" >
+			<h5>{{monCtrl.titre}}</h5>
+			<h6>{{monCtrl.soustitre}}</h6>
+			<div ng-controller="monAutreControleur" survolator>
+				<h5>{{monAutreCtrl.titre}}</h5>
+				<h6>{{monAutreCtrl.soustitre}}</h6>
+			</div>
+			<div ng-controller="encoreUnAutreControleur as encoreUnAutreCtrl" survolator>
+				<h5>{{encoreUnAutreCtrl.titre}}</h5>
+				<h6>{{encoreUnAutreCtrl.soustitre}}</h6>
+			</div>
+			<ma-directive-magique></ma-directive-magique>
+			<ma-directive-magique></ma-directive-magique>
+			<ma-directive-magique></ma-directive-magique>
+			<ma-directive-magique></ma-directive-magique>
+			<ma-directive-magique></ma-directive-magique>
+		</div>
+	</div>
+    <script src="./lib/angular.min.js"></script>
+	<script src="./services.js"></script>
+	<script src="./controllers.js"></script>
+	<script src="./directives.js"></script>
+	<script>
+		(function(){
+			angular.module('monModule', ['mesControleurs','mesDirectives']); //Création de module
+
+			angular.bootstrap(window.document, ['monModule'], {strictDi:true}); //Attache le module à window.document 
+		})();
+    </script>
+  </body>
+</html>

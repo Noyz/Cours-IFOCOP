@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>jQuery : Exercice 28</title>
+    <style>
+    #cube {
+      height: 370px;
+      position:relative;
+    }
+    </style>
+		<link rel="stylesheet" href="../src/styles1.css" type="text/css"/>
+		<script type="text/javascript" src="../jquery-1.11.3.js"></script>
+		<script type="text/javascript">
+      /*********************************
+      ***********PRESENTATION***********
+      **********************************
+        On peut entourer un élément ou supprimer son entourage au moyen des méthodes suivantes :
+        _ wrap() : entoure l'élément par un autre élément.
+      	_ wrapInner() : entoure le contenu d'un élément à l'intérieur de ses balises par un autre élément.
+      	_ wrapAll() : entoure d'une façon globale les éléments sélectionnés avec un autre élément.
+        _ unwrap() : supprime l'élément parent.
+      */
+
+      /**********************************
+      *************EXERCICES*************
+      ***********************************
+      	Reprenez le code de l'exercice précédent et utilisez la méthode wrap() pour l'image.
+      */
+
+      $(document).ready(function(){
+          $('p').after('<hr/>');
+          $(document.children[0].children[1].children[6]).after("<div id='cube'></div>");
+          $('#cube').append("<img src='../img/katana.jpg' id='katanaa'>");
+          $('#katanaa').wrap("<span id=""></span>");
+          $('#katanaa').wrap("<span></span>");
+          $('#katanaa').wrap("<span></span>");
+          $('#katanaa').wrap("<span></span>");
+        });
+    </script>
+	</head>
+	<body>
+      <h1>Titre 1</h1>
+      <p>Paragraphe 1</p>
+
+      <h1>Titre2 </h1>
+      <p>Paragraphe 2</p>
+
+      <h1>Titre3 </h1>
+      <p>Paragraphe 3</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

@@ -1,0 +1,13 @@
+.masque{
+	height: 40px;
+	width: 24px;
+	border: 1px solid black;
+	overflow: hidden;
+	position:absolute;
+}
+
+.sprite{
+	position:absolute;
+	top:0px;
+	left:0px;
+}

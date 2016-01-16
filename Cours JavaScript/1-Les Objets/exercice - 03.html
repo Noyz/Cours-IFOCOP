@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>JavaScript & DOM : Les Objets - Exercice 3</title>
+    <script>
+      //Énoncé :
+      /*
+      1. Dans les exercices de JavaScript "procédural" vous avez créé plusieurs fonctions. Vous devez regrouper toutes ces fonctions (au moins 5 d’entre-elles) dans un objet en JSON. Déclarez un objet dans lequel chaque propriété contiendra une fonction parmi celles créées précédemment.
+      */
+
+   /* var mesFonctionsProcedurales = {
+
+          fermeture : function(){
+          open('http://www.google.com', 'google', '');
+        },
+
+
+           resultat : function(){
+            var resultatFinal = confirm('Voulez vous continuer ?');
+                if(resultatFinal){
+                  var message = alert('Vous avez cliquez sur OK ');
+                  return message;
+                }
+                else {
+                  var messageFalse = alert('Vous avez cliquez sur Annuler');
+                  return messageFalse;
+                }
+            },
+
+              message : function(){
+                var commencement = false;
+                while (commencement == false) {
+                  var commencement = confirm("Voulez vous continuer ?");
+                  }
+                if(commencement) {
+                  alert("Voulez vous continuer ?");
+                  }
+              },
+
+               debut : function(){
+                while(textUtilisateur != true){
+                  var textUtilisateur = prompt("Veuillez saisir un petit texte");   
+                if(textUtilisateur){
+                  alert('J\'ai finis!');
+                  textUtilisateur = true;
+                  }
+                }
+              },
+
+               tableau : function(){
+        var monTableau = ["Texte1", "Texte2", "Texte3"];
+        var resultat = 0;
+        while(resultat < monTableau.length){
+          alert(monTableau);
+          resultat++;
+        }
+      }
+    }
+      
+      /*
+      2. Exécutez chacune des méthodes créés dans cet objet pour les tester.
+      */
+      /*mesFonctionsProcedurales.fermeture();
+      mesFonctionsProcedurales.resultat();
+      mesFonctionsProcedurales.message();
+      mesFonctionsProcedurales.debut();
+      mesFonctionsProcedurales.tableau();
+      
+
+      /*
+     /*3. Déclarez 1 objet JSON qui contient :
+
+      -> 1 propriété qui contient une méthode (fonction dans une propriété) :
+        - qui prend en argument 1 nombre.
+        - qui affiche ce nombre dans une une boîte de dialogue.
+        - qui RETOURNE ce nombre multiplié par 100.
+      -> Exécutez cette méthode et AFFICHEZ la VALEUR DE RETOUR dans une boîte de dialogue.*/
+       //var tableau = [2, 5, 7, 4];
+       var objet1 = {
+          propriete1 :10,
+          propriete2 :20,
+          propriete3 :30,
+          propriete4 :40,
+          propriete5 :50
+        }
+       var monFichierJson = {
+         /* multiplication : function(nombre){
+            alert(nombre);
+            var resultat = nombre * 100;
+            return resultat;
+          },
+       
+      
+      /*-> 1 propriété qui contient une méthode :
+        - qui prend en argument 1 texte.
+        - qui affiche ce texte dans une boîte de dialogue.
+        - qui RETOURNE ce texte concaténé avec la chaîne de caractère 'hello !'.
+      -> Exécutez cette méthode et AFFICHEZ la VALEUR DE RETOUR dans une boîte de dialogue.
+    */ 
+       /*   tapeText : function(a){
+            alert(a);
+            var result = a + "hello";
+            return result;
+          },
+    
+      /*-> 1 propriété qui contient une méthode :
+        - qui prend en argument un tableau de 3 index.
+        - qui affiche le contenu à l'index 1
+        - qui remplace ce que contient l'index 1 par ce qui est contenu dans l'index 2.
+        - qui RETOURNE ce tableau de 3 index modifié.
+      -> Exécutez cette méthode et AFFICHEZ la valeur du 2ème index de la VALEUR DE RETOUR dans une boîte de dialogue.
+   */  /*   monTableau : function (tableau) {
+            alert(tableau[1]);
+            var retour = tableau[1] = 7;
+            return tableau;
+          },    
+        
+
+        //alert(monFichierJson.multiplication(5));
+        //alert(monFichierJson.tapeText('Julian '));
+       // alert(monFichierJson.monTableau(tableau));
+
+
+
+      /*  -> 1 propriété qui contient une méthode :
+        - qui prend en argument un objet de 5 propriétés qui contiennent chacune un nombre.
+        - qui met dans la 4ème propriété la somme de chacun des nombre de chacune des propriétés.
+        - qui RETOURNE 1 objet de 5 propriétés.
+      -> Exécutez cette méthode et AFFICHEZ la valeur de la 4ème propriété de la VALEUR DE RETOUR dans une boîte de dialogue.
+      */
+
+        
+          changeValue : function(objet1){
+            alert(objet1);
+              
+              objet1.propriete4 = objet1.propriete1 + objet1.propriete2 + objet1.propriete3 + objet1.propriete4 + objet1.propriete5;
+              alert(objet1.propriete4);
+              return objet1.propriete4;
+          } 
+      };
+        alert(monFichierJson.changeValue(objet1));
+    </script>
+  </head>
+  <body>
+    <h1>Titre principal</h1>
+    <ul>
+      <li>Premier point</li>
+      <li>Deuxième point</li>
+      <li>Troisième point</li>
+    </ul>
+    <div>
+      <h2><span>1</span>. Titre de la première section</h2>
+      <p><span>1.1</span>. Premier paragraphe de la première section.</p>
+      <p><span>1.2</span>. Deuxième paragraphe de la deuxième section.</p>
+    </div>
+    <div>
+      <h2><span>2</span>. Titre de la deuxième section</h2>
+      <p><span>2.1</span>. Premier paragraphe de la deuxième section.</p>
+      <p><span>2.2</span>. Deuxième paragraphe de la deuxième section.</p>
+    </div>
+    <div>
+      <h2><span>3</span>. Titre de la troisième section</h2>
+      <p><span>3.1</span>. Premier paragraphe de la troisième section.</p>
+      <p><span>3.2</span>. Deuxième paragraphe de la troisième section.</p>
+    </div>
+  </body>
+</html>

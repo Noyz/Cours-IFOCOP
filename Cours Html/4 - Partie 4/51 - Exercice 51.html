@@ -1,0 +1,148 @@
+<!--
+	La propriété position permet de gérer finement le placement des éléments par rapport au flux.
+  Position peut prendre quatre valeurs:
+  _ absolute
+  _ relative
+  _ fixed
+  _ statique
+  
+  La valeur absolute permet de sortir l'élément du flux. On précise ensuite sa position. Ainsi, si l'on souhaite placer un bloc en haut et à gauche, on écrira :
+    #bloc{
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    On peux utiliser les propriétés top, bottom, left et right.
+-->
+
+<!--
+	Reproduisez la capture d'écran Exercice 51.jpg. Utilisez seulement la propriété position avec la valeur absolute pour le positionnement de la navigation.
+  Utilisez également cette propriété pour le titre du menu qui doit être contenu dans la balise nav.
+  Que remarquez vous lorsque vous placez cet texte ?
+-->
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link type="text/css" href="css/stylesheet.css" rel="stylesheet">
+    <title>Exercice</title>
+  </head>
+  <body>
+    <div id="contenu">
+      <div id="title">
+        <p>Titre</p>
+      </div>
+      <div id="all">
+          <div class="sideMenu">
+            <span class="nav">Menu</span>
+            <p>Acceuil</p>
+            <p>Actualité</p> 
+            <p>Information</p>
+            <p>Contact</p>
+          </div>
+          <div class="text">
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a augue nibh. Nulla at velit lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque eget lobortis leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin vitae efficitur nisl, at tincidunt tellus. Aliquam quis pulvinar orci. Cras laoreet tellus vel dui accumsan pellentesque. Mauris volutpat diam sit amet nibh varius venenatis. Proin urna mauris, tristique nec diam eu, pellentesque pellentesque mauris. Quisque at pharetra risus. Aenean pulvinar arcu dolor, id efficitur augue sagittis non. Sed pulvinar lacus vel dolor placerat, sit amet imperdiet augue sagittis.<br><br>
+
+            Mauris quis dignissim velit. Sed ac massa maximus, molestie eros id, maximus urna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sollicitudin congue ex. Curabitur iaculis ipsum in sem rhoncus tristique. Nam condimentum orci non tortor tincidunt consectetur ac sit amet ante. Vivamus et massa ac enim vehicula cursus. Phasellus ac semper metus. Pellentesque molestie pretium sapien nec laoreet. Nunc et diam ut lorem tristique ullamcorper. Suspendisse molestie, libero a facilisis ullamcorper, libero nibh placerat justo, et suscipit nulla augue a tellus.<br><br>
+
+            Quisque ullamcorper, est in pharetra ultrices, neque nibh ultrices lorem, vitae bibendum sem erat eget dui. Nullam ultrices aliquam purus, vitae aliquam felis elementum ac. Aenean aliquam mauris id nisl facilisis rhoncus. Nullam tincidunt pulvinar magna sit amet elementum. Nunc at dapibus arcu. Nulla justo ante, rhoncus in dictum ut, sagittis vitae sem. Nunc luctus hendrerit tempus. Nunc hendrerit enim mauris, sit amet porttitor sapien iaculis vel. Suspendisse potenti. Aliquam orci ante, fringilla ut rutrum eu, tincidunt eget turpis.<br><br>
+
+            Nam in luctus ante, id maximus massa. Ut id justo felis. Aliquam ullamcorper mattis ante vel congue. Pellentesque et justo diam. Ut eu nunc vitae dolor finibus efficitur ut eget dolor. Nunc in vestibulum lectus, at pretium erat. Etiam tincidunt gravida ex, at dapibus orci. Sed commodo nisl non bibendum cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque eget placerat nisl. Maecenas eget eros commodo, lobortis orci nec, finibus dolor. Aliquam eu pharetra sapien, nec sodales ante. </p><br>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--
+body {
+  margin:0 auto;
+  width:900px;
+  height:100%;
+  background-color: #4188a4;
+}
+
+#all {
+padding-right:20px;
+}
+
+#title {
+  background-color:#215b73;
+  color:white;
+  padding:20px 0 20px 0;
+  text-align:center;
+  font-size:70px;
+  height: 55px;
+  margin:0 0 0 0 ;
+  font-family:arial;
+}
+
+#title p {
+  margin:0;
+  color:#efa96b;
+  line-height:50px;
+  font-style:italic;
+}
+
+
+.sideMenu {
+  color:#efa96b;
+  width: 200px;
+  background-color:#215b73;
+  border-top-right-radius:10px;
+  border-bottom-right-radius:10px;
+  float:left;
+  text-align :center;
+  font-size:20px;
+  padding: 0px 15px 30px 15px;
+  text-transform:uppercase;
+  margin-right:5px;
+  font-family:arial, sans-serif;
+  position:relative;
+  margin-top:20px;
+  
+}
+
+.sideMenu p {
+  border-bottom: 1px solid #efa96b;
+  margin-bottom:3px;
+}
+
+.nav + p {
+  margin-top:35px
+}
+
+
+.espacement {
+  height:100%;
+  width: 235px;
+  float:left;
+  margin-right:15px;
+}
+
+#contenu {
+  padding-top: 25px;
+}
+
+.nav {
+  position:absolute;
+  top:0;
+  left:0;
+  background-color:#f2b076;
+  border-bottom-right-radius:10px;
+  color:#14516e;
+  
+  width:115px;
+}
+
+.text {
+  float: right;
+  background-color:#f6ddc7;
+  width:600px; 
+  padding: 1px 20px 10px 20px;
+  text-align:justify;
+
+}
+
+
+-->

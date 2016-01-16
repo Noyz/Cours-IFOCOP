@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>jQuery : Exercice 33</title>
+		<link rel="stylesheet" href="../src/styles1.css" type="text/css"/>
+		<style>
+		    img{
+		      height : 100px;
+		      width: 100px;
+
+		    }
+		</style>
+		<script type="text/javascript" src="../jquery-1.11.3.js"></script>
+		<script type="text/javascript">
+			/*********************************
+			***********PRESENTATION***********
+			**********************************
+				La méthode animate() pertmet de créer une animation un élément en modifiant les propriétés css indiquées. Cela agit uniquement sur les propriétés css qui ont une valeur numérique.
+
+				Par exemple, un changement de taille de police et d'opacité pour un paragraphe en 800 millisecondes :
+				$('p').animate({opacity:0.5,fontSize:'2em'},800);
+
+				La méthode delay() permet d'introduire une pause avant de continuer l'exécution du code, ici 2 secondes :
+
+				$('#truc').delay(2000).hide();
+			*/
+
+			/**********************************
+			*************EXERCICES*************
+			***********************************
+			** 1 **
+				Reprenez le code de l'exercice précédent.
+				À la fin du chargement du document, prévoyez le script suivant :
+				Les
+				Après trois secondes, les images changent de taille et d'opacité en une seconde.
+
+				Utilisez les méthodes delay() et animate().
+			*/
+				/*$(document).ready(function(){
+					$('img').delay(3000).animate({'height':'150px', 'width':'60px', 'opacity':'0.5'}, 800);
+					$('img').delay(6000).animate({'height':'200px', 'width':'200px', 'opacity':'0.5'}, 400);
+		            $('img').mouseenter(function(){
+		              var valeur =  $(this).attr('id');
+		              $('img:not([id*=' + valeur +'])').fadeTo(1000, 0.2);
+		            });
+
+		            $('img').mouseleave(function(){
+		             $('img').fadeTo(1000, 1);
+		           });  
+       			 });*/
+			/*
+			** 2 **
+				Pour l'instant, l'animation s'applique aux trois images en même temps. D'une part, il est possible d'exécuter une fonction à la fin de nombreuses méthodes jQuery dont animate(); d'autre part, on peut sélectioner un seul élément avec la méthode first() puis chaque élément qui suit avec next().
+				Animez successivement en deux secondes les images.
+
+				Utilisez les méthodes delay(), first(), animate() et next(). Utilisez le principe de récursivité (une fonctionne qui s'appelle elle-même).
+			*/
+
+			$(document).ready(function(){
+				function anime(){
+					$('img').first().delay(2000).animate({'height':'150px', 'width':'60px', 'opacity':'0.5'}, 800);
+					$('img').first().next().delay(3000).animate({'height':'200px', 'width':'200px', 'opacity':'0.5', 'margin-top':'200px'}, 400);
+					$('img').first().next().next().delay(2000).animate({'height':'100px', 'width':'300px', 'opacity':'0.9', 'border-radius':'100%'}, 400);
+					anime();
+				});
+					
+				anime();
+	            $('img').mouseenter(function(){
+	              var valeur =  $(this).attr('id');
+	              $('img:not([id*=' + valeur +'])').fadeTo(1000, 0.2);
+	            });
+
+	            $('img').mouseleave(function(){
+	             $('img').fadeTo(1000, 1);
+	           });  
+       		});
+
+
+		</script>
+	</head>
+	<body>
+		<img src='../img/katana.jpg' id='katana'/>
+      <img src='../img/kusarigama.jpg' id='kusarigama'/>
+      <img src='../img/shuriken.jpg' id='shuriken'/>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

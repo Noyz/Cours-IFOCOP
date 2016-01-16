@@ -1,0 +1,53 @@
+<!--
+	On peut spécifier différentes zones dans le tableau au moyen des balises thead, tbody et tfoot.
+	Dans l'ordre de déclaration, on débute par le thead, puis le tfoot et enfin le tbody.
+-->
+
+<!--
+	1 - Reprenez le tableau de l'exercice précédent
+	2 - Mettez la première ligne en gras au moyen de la balise thead.
+	3 - Répétez les informations de la première ligne dans une autre ligne située à la base du tableau. Mettez également cette ligne en gras.
+-->
+
+<!DOCTYPE>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link type="text/css" href="css/stylesheet.css" rel="stylesheet">
+		<title>Exercice</title>
+	</head>
+	<body>
+		<table>
+			<thead>
+				<tr>
+					<th>Villes</th>
+					<th>Departement</th>
+					<th>Region</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>moule</td>
+					<td>971</td>
+					<td>France</td>
+				</tr>
+				<tr>
+					<td>Villes</td>
+					<td>Departement</td>
+					<td>Region</td>
+				</tr>
+			</tbody>
+			<tfoot>	
+				<tr>
+					<td>bastille</td>
+					<td>ile de france</td>
+					<td>France</td>
+				</tr>
+			</tfoot>
+		</table>
+	</body>
+</html>
+
+<!--tbody tr:nth-child(2) {
+	font-weight:bold;
+}-->

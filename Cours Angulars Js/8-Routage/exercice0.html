@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr" ng-app="angularJsExercice0" ng-strict-di>
+  <head>
+    <meta charset="utf-8">
+    <title>AngularJS : Les Routes : Exercice 0</title>
+  </head>
+  <body>
+	<ul>
+		<li><a href="#/tpl1">Première Page</a></li>
+		<li><a href="#/tpl2">Deuxième Page</a></li>
+		<li><a href="#/tpl3">Troisième Page</a></li>
+	</ul>
+	<div>
+		<div ng-view ></div>
+	</div>
+	<script src="./lib/angular.min.js"></script>
+	<script src="./lib/angular-route.min.js"></script>
+	<script>
+		'use strict';
+		(function(){
+			
+			angular.module('angularJsExercice0', ['ngRoute']);
+			
+			angular.module('angularJsExercice0').config(['$routeProvider',function($routeProvider){
+				
+				$routeProvider
+				
+				.when('/tpl1',{
+					templateUrl:'exercice0-tpl1.html'
+				})
+				
+				.when('/tpl2',{
+					templateUrl:'exercice0-tpl2.html'
+				})
+				
+				.when('/tpl3',{
+					templateUrl:'exercice0-tpl3.html'
+				})
+				
+				.otherwise('/tpl1');
+			}]);
+			
+		
+		})();	
+	</script>
+  </body>
+</html>

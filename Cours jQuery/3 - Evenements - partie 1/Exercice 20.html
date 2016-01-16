@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>jQuery : Exercice 20</title>
+		<link rel="stylesheet" href="../src/styles1.css" type="text/css"/>
+		<style>
+		#cube {
+			height:200px;
+			width:200px;
+			position:absolute;
+			top:0px;
+			left: 0px;
+			
+		}
+
+		.vert{
+			background-color:green;
+			width:50px;
+		}
+
+		.blue {
+			background-color:blue;
+			height: 90px;
+		}
+
+		.rouge{
+			.background-color: red;
+			border-radius:50px;
+		}
+
+		.jaune {
+			background-color: yellow;
+		}
+		.background-color {
+			background-color:rgb(0,0,0);
+		}
+		</style>
+		</style>
+		<script type="text/javascript" src="../jquery-1.11.3.js"></script>
+		<script type="text/javascript">
+      /*********************************
+      ***********PRESENTATION***********
+      **********************************
+        Il est possible avec jQuery d'intercepter l'usage des touches de clavier :
+        keypress() : appui et maintien sur la touche du clavier
+        keyup() : appui sur la touche du clavier
+        keydown() : relâchement d'une touche du clavier
+        
+        Par exemple :
+        $('div').keypress(function(evenement){
+          console.log(evenement.width).
+        });
+        
+        La valeur de la touche enfoncée est renvoyé ici (dans le cas de keyup et keydown, il s'agit du code ASCII de la touche).
+        
+      */
+
+      /**********************************
+      *************EXERCICES*************
+      ***********************************
+        Créez une page vide contenant un petit bloc coloré.
+        À la fin du chargement du document, prévoyez le script suivant :
+        a) Dirigez le bloc dans la page avec les touches fléchées.
+        b) Le bloc change de couleur durant le mouvement.
+        
+        N.B. : les ascenseurs de la fenêtre ne doivent pas bouger (utilisez evenement.preventDefault()).
+        
+        Utilisez les méthodes keyup(), keydown() et css().
+
+      */
+    	$(document).ready(function(){
+    		var couleur = 1;
+            var addLeft = 0;
+            var addUp = 0;
+            function goLeft(){
+              	addLeft -= 7;
+              	$('#cube').offset({"top": addUp,"left":addLeft}); 
+            };
+             function goRight (){
+                addLeft += 7;
+                $('#cube').offset({"top": addUp,"left":addLeft});          
+            };
+           function goUp(){
+                addUp -= 7;  
+                $('#cube').offset({"top": addUp,"left":addLeft});      
+            };
+           function goDown (){
+                addUp += 7; 
+                $('#cube').offset({"top": addUp,"left":addLeft});   
+            };
+
+            function changeColor(){                       
+                $('#cube').css('backgroundColor', 'rgb(0,0'+couleur+')');
+                couleur += 4;
+                if(couleur < 255){
+                	setTimeout(changeColor, 1);
+                }
+              };
+              var i = 0;
+              	$(document).keydown(function(event){
+                    var code = event.keyCode;
+                    
+                    switch(code){
+                          case 37 : 
+                          goLeft();    
+                          break;
+                          case 38 : 
+                          goUp();                               
+                          break;
+                          case 39 : 
+                          goRight();
+                          break;s
+                          case 40 : 
+                          goDown(); 
+                          break;
+                    };
+              	});     
+            });	   
+		</script>
+	</head>
+	<body>
+		<div id="cube" class="vert">
+			<div>
+	</body>
+</html>

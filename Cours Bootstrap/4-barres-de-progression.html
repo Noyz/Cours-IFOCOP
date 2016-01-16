@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!--  Balises meta à ajouter en premier pour assurer un bon fonctionnement de Bootstrap -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
+    <!-- Inclusion du css de Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+     <!-- Inclusion de mon css perso -->
+    <link href="css/monstyle.css" rel="stylesheet">
+    
+    <title>HTML5 Test Page</title>
+</head>
+<body>
+  <!-- La class .container est le conteneur global de BootStrap -->
+  <div class="container">
+   <h2> Barres de progression</h2>
+   <div class="progress">
+  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+    HTML5
+  </div>
+</div>
+<div class="progress">
+  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+    CSS
+  </div>
+</div>
+<div class="progress">
+  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+    JS
+  </div>
+</div>
+<div class="progress">
+  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+    NodeJs (soon available !)
+  </div>
+</div>
+    
+  </div>  <!-- Fin de la class .container-->
+  
+    <!-- Inclusion des scripts nécéssaires à Bootstrap : bootstrap.min.js (obligatoire) et jquery (facultatif. Obligatoire qi on veut utiliser les addons javascript de Bootstrap)-->
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    
+    <!-- Script pour dynamiser les progress- bar-->
+    <script>
+    $(function(){
+      console.log('here we are');
+      
+      $(".progress").each(function(){
+        var cible = $(this).attr('aria-valuenow');
+        $(this).animate({width:cible+"%"}, 500);
+      })
+    })
+    
+    </script>
+    
+</body>
+</html>

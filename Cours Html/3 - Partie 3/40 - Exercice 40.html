@@ -1,0 +1,88 @@
+<!--
+	Lorsque le formulaire comprend de nombreux champs, il est possible de les regrouper en plusieurs ensembles au moyen de la balise fieldset.
+-->
+
+<!--
+	1 - Reprenez le formulaire de l'exercice précédent.
+	2 - Regroupez le contenu en plusieurs ensembles.
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Titre</title>
+		<style>
+		
+		</style>
+	</head>
+	<body>
+		<form method = "POST" action="">
+			<fieldset><legend>Civilité</legend>
+				<p>
+					<label>Titre</label></br>
+					<select name="titre">
+						<option>mr</option>
+						<option>Mme</option>
+						<option>Mlle</option>
+					</select>
+				</p>
+				
+				<p>
+					<label>Prénom</label>
+					<input type="text" name="prenom"/>
+				</p>
+				<p>
+					<label>nom</label>
+					<input type="text" name="nom"/>
+				</p>
+			</fieldset>	
+			<fieldset><legend>Coordonées</legend>
+				<p>
+					<label>Type de téléphone :</label>
+					<select name="typeTelephone">
+						<option>Fixe</option>
+						<option>Mobile</option>
+					</select><br>
+					<label>N° de téléphone</label>
+					<input type="tel" name="telephone"/>
+				</p>
+				<p>
+					<label>E-mail</label>
+					<input type="email" name="email"></label>
+				</p>
+				<p>
+					<label>Date de naissance</label>
+					<input type="date" name="date"/>
+				</p>
+				<p>
+					<label>voie</label>
+					<input type="text" name="voie"/>
+				</p>
+				<p>
+					<label>code postal</label>
+					<input type="text" name="codePostal"/>
+				</p>
+				<p>
+					<label>ville</label>
+					<input type="text" name="ville"/>
+				</p>
+					<label>Site web</label>
+					<input type="url" name="url"/>
+				</p>
+			</fieldset>
+			<fieldset><legend>Autres</legend>
+				<p>
+					<label>Commentaires</label>
+					<textarea name="commentaire"></textarea>
+				</p>
+				<p>
+					<label>Centres d'intérêts</label><br>
+					<label>Choix1<input type="checkbox" name="choix1"/></label><br>
+					<label>Choix2<input type="checkbox" name="choix2"/></label><br>
+					<label>Choix3<input type="checkbox" name="choix3"/></label><br>
+				</p>
+			</fieldset><br>
+			<input type="submit" value="Envoyez vos réponses"></input>
+	</body>
+</html>

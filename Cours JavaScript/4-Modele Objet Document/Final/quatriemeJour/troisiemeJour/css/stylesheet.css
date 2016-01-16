@@ -1,0 +1,15 @@
+.masque {
+	height:25px;
+	width:19px;
+	overflow:hidden;
+	position:absolute;
+	top: 200px;
+	left: 800px;	
+}
+
+#contenu {
+    position:absolute;
+    top:0;
+	left:0;
+
+}

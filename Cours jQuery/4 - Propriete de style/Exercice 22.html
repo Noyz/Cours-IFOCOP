@@ -1,0 +1,149 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>jQuery : Exercice 22</title>
+		<link rel="stylesheet" href="../src/styles1.css" type="text/css"/>
+		<style>
+			#maDiv{
+				height:20px;
+				width:20px;
+				padding:10px;
+				background-color:red;
+			}
+		</style>
+		<script type="text/javascript" src="../jquery-1.11.3.js"></script>
+		<script type="text/javascript">
+			/*********************************
+			***********PRESENTATION***********
+			**********************************
+				Il existe plusieurs méthodes pour connaitre la dimension d'un élément ou la fixer :
+				_height() : hauteur de l'élément
+				_innerHeight() : hauteur de l'élément, padding compris.
+				_ outerHeight() : hauteur de l'élément, padding et bordure compris.
+				_ width() : largeur de l'élément.
+				_ innerWidth() : largeur de l'élément, padding compris.
+				_ outerWidth() : largeur de l'élément, padding et bordure compris.
+			*/
+
+			/**********************************
+			*************EXERCICES*************
+			***********************************
+			Créez une page html contenant une div ayant un padding de 10px et une largeur de 20px et une hauteur de 20px. Prévoyez une couleur de fond différente pour la div.
+			À la fin du chargement du document, prévoyez le script suivant :
+			** 1 **
+			Toutes les secondes, la div augmente de 5px en largeur et hauteur.
+
+			Utilisez les méthodes height(), width() et setInterval().
+			*/
+				/*$(document).ready(function(){
+					var i = 20;
+					setInterval(function(){
+						i += 5;
+						$('#maDiv').height(i + "px").width(i+"px");
+					}, 1000);
+				});*/
+			/*
+			** 2 **
+			Améliorez le code, toutes les 10 secondes, le padding augmente de 5px.
+
+			Utilisez les méthodes css() et setInterval().
+			*/
+			/*$(document).ready(function(){
+				function all(){
+					var i = 20;
+					var j = 10;
+					setInterval(function(){
+						i += 5;
+						
+						$('#maDiv').height(i + "px").width(i+"px");
+					}, 1000);
+					setInterval(function(){
+						j += 5;
+						$('#maDiv').css('padding', j + 'px');
+					},10000);
+				};
+				all();
+			});*/
+			/*
+			** 3 **
+			Pour l'instant, le bloc augmente sans cesse de taille. Quand le bloc a une largeur supérieure à 50% de la largeur ou une hauteur supérieure à 50% de la hauteur de la fenêtre, inversé le mouvement :
+			_ toutes les secondes la largeur et la hauteur augmente de 5px
+			_ toutes les 10 secondes, le padding se réduit de 5px.
+
+			Quand la div revient à sa dimension initiale, sa augmente à nouveau.
+
+			Utilisez les méthodes height(), innerHeight(), width(), innerWidth et setInterval().
+			*/
+
+			$(document).ready(function(){
+				var i = 20;
+				var j = 10;
+					var growth = function (){
+						var time = setInterval(function(){
+							i += 5;
+							$('#maDiv').height(i + "px").width(i+"px");
+							if($('#maDiv').innerWidth() > window.innerWidth / 2){
+								clearInterval(time);
+								var time2 = setInterval(function(){
+									i -= 5;
+									$('#maDiv').height(i + "px").width(i+"px");
+								},10);
+							}
+						}, 10);						
+					};
+					growth();
+				
+				function changement(){
+
+					i = i + pas;
+					$('#maDiv').height(i + "px").width(i +"px");
+					$('#maDiv').height(70 + "px").width(i +"px");
+					console.log($('#maDiv').innerWidth())
+					if($('#maDiv').innerWidth() > $(document).innerWidth() / 2 || $('#maDiv').innerWidth() < 40 ){
+						pas = -pas;
+					}
+				};
+				setInterval(changement,200);
+				
+			});
+
+
+
+						
+							
+								
+
+								
+								
+						
+					
+					/*var pad = setInterval(function(){
+						j -= 5;
+						$('#maDiv').css('padding', j + 'px');
+						$('#maDiv').css('border-radius', j + '%');
+						if($('#maDiv').innerHeight() > window.innerHeight / 2){
+							var time3 = setInterval(function(){
+								j -= 5;
+								$('#maDiv').css('padding', j + 'px');
+							},100);
+						}
+					},100);
+						
+				/*});*/
+
+			/*
+			** 4 **
+			Gérez le cas où la dimension de la fenêtre change.
+
+			Utilisez la méthode resize().
+			*/
+		</script>
+	</head>
+	<body>
+	<div id="maDiv"></div>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

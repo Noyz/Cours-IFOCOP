@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>jQuery : Exercice 29</title>
+		<link rel="stylesheet" href="../src/styles1.css" type="text/css"/>
+    <style>
+    #shuriken {
+      height:100px;
+      width:100px;
+    }
+    </style>
+		<script type="text/javascript" src="../jquery-1.11.3.js"></script>
+		<script type="text/javascript">
+      /*********************************
+      ***********PRESENTATION***********
+      **********************************
+        jQuery permet de remplacer des éléments dans le DOM. Il existe pour ce faire deux méthodes :
+      	_ replaceWith() : remplace tous les éléments visés par un nouveau contenu.
+      		ex : $( 'div.seconde').replaceWith( '<h2>Nouveau titre</h2>');
+      	_ replaceAll(): même effet que replaceWith, mais la source et la cible sont inversés.
+      		ex : $('<h2>Nouveau titre</h2>').replaceAll('.autre');
+      */
+
+      /**********************************
+      *************EXERCICES*************
+      ***********************************
+      	Créez une page contenant deux images.
+      	À la fin du chargement du document, prévoyez le script suivant :
+      	au survol d'une image, remplacez l'image par une autre image.*/
+        $(document).ready(function(){
+          $('img').click(function(){
+            console.log($(this));
+            if($(this).attr("id") == 'kusari'){
+            $(this).replaceWith("<img src='../img/shuriken.jpg' id='shuriken'>")
+          } else {
+            $(this).replaceWith("<img src='../img/bo.jpg' id='bo'>")
+          }
+          });
+        });
+
+    </script>
+	</head>
+	<body>
+      <h1>Titre 1</h1>
+      <p>Paragraphe 1</p>
+
+      <h1>Titre2 </h1>
+      <p>Paragraphe 2</p>
+
+      <h1>Titre3 </h1>
+      <p>Paragraphe 3</p>
+
+      <img src="../img/kusarigama.jpg" id='kusari'/>
+      <img src="../img/katana.jpg" id='katana'/>
+
+
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

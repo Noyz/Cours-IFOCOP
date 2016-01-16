@@ -1,0 +1,63 @@
+<!--
+Dans le fragment de page suivant,
+<div>
+	<cite>Un texte</cite>
+</div>
+<div>
+	<p>
+		<cite>Un autre texte</cite>
+	</p>
+</div>
+
+Quand on écrit, par exemple,
+
+div cite{
+	color: red;
+}
+
+,tous les cite auront la couleur du texte en rouge.
+Si on écrit,
+
+div>cite{
+	color: red;
+}
+
+seul <cite>Un texte</cite> sera en rouge.
+-->
+
+<!--
+	1 - Créez un document contenant un strong et deux p.
+	2 - Le premier p contient un strong.
+	3 - Le second p contient un cite qui contient un strong.
+	4 - Sans utiliser d'id ou de class ou de style écrit dans la balise, mettez une couleur différente sur chacun des strong.
+-->
+
+<!DOCTYPE>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link type="text/css" href="css/stylesheet.css" rel="stylesheet">
+		<title>Exercice</title>
+	</head>
+	<body>
+		<strong>Proin nec eros at velit vehicula ullamcorp</strong>
+
+		<p><strong>uam vehicula massa nibh, sed vestibulum lacus tristique sit amet. Proin nec eros at velit vehicula ullamcorper at sed libero. Nunc neque dui, vestibulum facilisis turpis egestas, dictum semper risus. Nam eu lacus tincidunt,<cite> efficitur dolor et, viverra felis. Quis</strong></p>
+
+		<p><cite><strong>sed, mattis auctor ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis ut sollicitudin mi. Nam scelerisque pharetra massa, et euismod arcu<strong></cite></p>
+	</body>
+</html>
+
+<!--
+strong {
+	color:red;
+}
+
+
+p strong {
+	color:yellow;
+}
+
+p cite strong {
+	color:green;
+}-->

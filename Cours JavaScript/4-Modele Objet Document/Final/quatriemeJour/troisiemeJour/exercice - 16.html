@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>JavaScript & DOM : Le Modèle Objet du Document - Exercice 16</title>
+    <link style="text/css" href="css/stylesheet.css" rel="stylesheet">
+    <script>
+      //Énoncé :
+      /*
+        En JavaScript, on a accès à des objets qui contiennent les informations relatives au navigateurs Internet : le DOM. L'objet qui permet d'accéder au DOM est l'objet window. Cet objet est l'objet de plus haut niveau en JavaScript. L'objet window contient des sous objets que nous allons exploiter.
+        
+        Lorsque le navigateur Internet exécute la méthode correspondant à un évènement, il lui transmet en paramètre un objet d'événement, cet objet d'événement contient des informations relatives à l'évènement qui est survenu. Les objets d'évènements sont documentés ici dans le MDN : https://developer.mozilla.org/fr/docs/Web/API/Event
+      */
+      
+
+      /*
+        1. Que fait le code ci-dessous ? Au chargement du document, lorsqu'on presse une touche, on récupère le code correspondant à la touche. Selon ce code, on affiche une boite de dialogue. Essayez ce code.
+      */
+      var addLeft = 800, addUp = 200, variable = 1, temps, temps2,temps3,temps4, variableDroite = 1, variableHaut = 1, variableBas = 1;
+
+      window.onload = function(){
+
+
+
+        function alterneGauche (){
+          var time = setInterval(function () {
+            if(image.style.left =="-19px"){
+              image.style.left = "0px";
+            } else {
+              image.style.left = "-19px";
+            }
+          }, 250);
+          return time;
+        };
+
+        function alterneHaut (){
+          var timeHaut = setInterval(function () {
+            if(image.style.left == "-38px"){
+              image.style.left ="0px";
+            } else {
+              image.style.left = "-38px";
+            }
+          }, 250);
+          return timeHaut;
+        };
+
+        function alterneDroite (){
+          var timeDroite = setInterval(function () {
+            if(image.style.left == "-19px"){
+              image.style.left ="0px";
+            } else {
+              image.style.left = "-19px";
+            }
+          }, 250);
+          return timeDroite;
+        };
+
+        function alterneBas (){
+          var timeBas = setInterval(function () {
+            if(image.style.left == "-38px"){
+              image.style.left ="0px";
+            } else {
+              image.style.left = "-38px";
+            }
+          }, 200);
+          return timeBas;
+        };
+
+
+      var goLeft = function(){
+        addLeft-= 2;
+        pkmn.style.left = addLeft + 'px';     
+      };
+
+      var goUp = function(){
+        addUp -= 2;
+        pkmn.style.top = addUp + 'px';
+      };
+
+      var goRight = function(){
+        addLeft += 2;
+        pkmn.style.left = addLeft + 'px';
+      };
+
+      var goDown = function(){
+        addUp += 2;
+        pkmn.style.top = addUp + 'px';
+        
+      };
+
+
+
+        var pkmn = document.getElementById('container');
+        var image = document.getElementById('contenu');
+        window.onkeydown = function(event){
+          var code = event.keyCode;
+          switch(code){
+            case 37:
+              goLeft();
+              if(variable){
+                image.style.top = "-25px";
+                image.style.left = "-19px";
+                temps = alterneGauche();
+                variable = 0;
+              }              
+              break;
+            case 38:
+              goUp();
+              if(variableHaut){
+                image.style.top = "-50px";
+                image.style.left = "-19px";
+                temps3 = alterneHaut();
+                variableHaut = 0; 
+              }
+            break;
+            case 39:
+              goRight();
+              if(variableDroite){
+                image.style.top = "-75px";
+                image.style.left = "-19px";
+                temps2 = alterneDroite();
+                variableDroite = 0;             
+              }
+            break;
+            case 40:
+              goDown();
+              if(variableBas){
+                image.style.top = "0px";
+                image.style.left = "-19px";
+                temps4 = alterneBas();
+                variableBas = 0;             
+              }
+            break;
+          };
+        };
+        window.onkeyup = function(event){
+
+            var code2 = event.keyCode;
+
+            switch(code2){
+              case 37 :
+              clearInterval(temps);
+              variable = 1;
+              image.style.left = "-19px";
+              break;
+
+              case 38:
+              clearInterval(temps3);
+              variableHaut = 1;
+              image.style.left = "-19px";
+              break;
+
+            case 39:
+              clearInterval(temps2);
+              variableRight = 1;
+              image.style.left = "-38px";
+            break;
+            case 40:
+              clearInterval(temps4);
+              variableBas = 1;
+              image.style.left = "-38px";
+            break;
+            };
+        };
+      };
+      
+      /*
+        Ce document comporte une balise img dans une div. La div sert de masque pour le sprite chargé à l'aide de la balise img. Un sprite est une image qui présent les décompositions d'un mouvement.
+      */
+
+      /*
+        1. Cherchez un sprite sur Google. Chargez le sprite dans le document Web ci-contre. Paramétrez les styles de la div masque pour que une seule décomposition de mouvement du sprite soit visible (utilisez la propriété de style overflow:hidden). La div doit être en position absolute. L'img dans la div doit être en position absolute.
+      */
+
+      /*
+        2. En utilisant comme base le code fourni, lorsque je presse une direction, déclenchez du code Javascript (dans la zone avec le sigle *instructions*) qui va déplacer de 2px dans cette direction la div masque.
+      */
+
+      /*
+        3. En utilisant comme base le code fourni, lorsque je presse la même direction, déclenchez du code Javascript (dans la zone avec le sigle *instructions*) qui va déplacer l'img dans le masque dans la direction opposée au déplacement précédent pour afficher la décomposition suivante du mouvement.
+      */
+
+      /*
+        4. Reproduire cela pour les directions restantes.
+      */
+
+      /*
+        5. Trouvez le code numérique qui correspond à la touche "entrée". Dans le cas ou l'utilisateur appuie sur la touche entrée, affichez un "mouvement spécial" de votre sprite (coup d'épée, explosion, etc... ou autre). L'événement contraire de onkeydown est onkeyup. Inspirez vous du code fourni pour faire en sorte que lorsque l'utilisateur relâche la touche entrée, le sprite revienne à son état initial.
+      */
+    </script>
+  </head>
+  <body>
+    <h1>Play !</h1>
+    <div id="middle">
+      <div id="container" class="masque" >
+        <img src="img/pokemon.png" id="contenu" class="sprite"/>
+      </div>
+    </div>
+    <noscript>
+      <p>Veuillez activer JavaScript</p>
+    </noscript>
+  </body>
+</html>
+
+
+
+

@@ -1,0 +1,88 @@
+body {
+	background-image:url("../img/sunset.jpg");
+	background-size: cover;
+	width:100%;
+}
+
+.all{
+	width:800px;
+	height:600px;
+	background-color: #5a5b5d;
+	margin: 10px auto;
+	padding:8px;
+	border-radius:1px solid #5a5b5d;
+}
+
+#background_opacity {
+	position: fixed;
+	z-index: -10;
+	top: 0; left: 0; right: 0; bottom: 0;
+	background-color: rgba(255, 255, 255, 0.5); /* L'opacite se regle ici */
+}
+
+h1 {
+	font-weight:bold;
+	font-style:italic;
+	padding: 15px 100px 15px 100px;
+	border-bottom-left-radius:50px;
+	border-top-right-radius:50px;
+	border-width:8px;
+ 	border-style:dotted solid ;
+	border-color:#539071;
+	display:block;
+	width:60px;
+} 
+
+.title {
+	padding-left:85px;
+}
+
+#colonne > p {
+	
+	-moz-column-count:2;
+	-webkit-column-count:2;
+	-o-column-count:2;
+	column-count:2;
+	-moz-column-gap:20px;
+	-webkit-column-gap:20px;
+	-o-column-gap:20px;
+	-moz-column-gap:20px;
+	-moz-column-rule-width:2px;
+	-webkit-column-rule-width:2px;
+	-o-column-rule-width:2px;
+	-colomn-rule:2px;
+	-moz-column-rule-color:#539071;
+	-webkit-column-rule-color:#539071;
+	-o-column-column-rule-color:#539071;
+	column-rule-color:#539071;
+	-moz-column-rule-style:solid;
+	-webkit-column-rule-style:solid;
+	-o-column-rule-style:solid;
+	column-rule-style:solid;
+}
+
+
+.traitCentre {
+	border-left: 1px solid #539071;
+    padding-left: 5px;
+    margin-left: 50px;
+}
+
+#white {
+	box-shadow:1px solid white;
+}
+#bouton {
+	background-color:#677c5b;
+	height:50px;
+	width:50px;
+	border:1px solid black;
+	box-shadow:1px 1px 4px 7px white;
+	border-radius:100%;
+	margin:0 auto;
+}
+
+#colomn{
+	height:100px;
+	width :1px;
+	border:1px solid #677c5b;
+}

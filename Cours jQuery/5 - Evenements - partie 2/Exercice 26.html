@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>jQuery : Exercice 26</title>
+		<link rel="stylesheet" href="../src/styles1.css" type="text/css"/>
+    <style>
+    button {
+      margin-right: 50px;
+      margin-bottom:50px;
+    }
+
+    .miniature {
+      height: 50px;
+      width:50px;
+      display:none;
+      position: absolute;
+      left: 40%;
+      top: 20%;
+    }
+    .miniature1{
+      left: 10%;
+      top: 20%
+    }
+    .miniature2{
+      left: 50%;
+      top: 20%
+    }
+    .miniature3{
+      left: 80%;
+      top: 20%
+    }
+    .big {
+      height:200px;
+      width:200px;
+      display:none;
+      position:absolute;
+    }
+    #big1 {
+      height:200px;
+      width:200px;
+      display:none;
+      left: 0%;
+      top: 60%;
+    }
+    #big2 {
+      height:200px;
+      width:200px;
+      left: 40%;
+      top: 60%;
+    }
+    #big3 {
+      height:200px;
+      width:200px;
+      left: 80%;
+      top: 60%;
+    }
+    </style>
+		<script type="text/javascript" src="../jquery-1.11.3.js"></script>
+		<script type="text/javascript">
+      /*********************************
+      ***********PRESENTATION***********
+      **********************************
+      Nous avons l'habitude de gérer les évènements liés aux actions de l'utilisateur. Il est possible d'aller plus loin en déclenchant un évènement sans l'action de l'utilisateur. C'est la méthode trigger() qui permet cela.
+      Par exemple, $('#idBlock').trigger('mouseenter'). Ici, le code simule l'entrée du curseur de la souris sur l'élément ayant l'id idBlock.
+      */
+
+      /**********************************
+      *************EXERCICES*************
+      ***********************************
+      Reprenez le code de l'exercice précédent. Ajoutez trois cases à cocher.
+
+      Quand une case à cocher est sélectionnée, simulez un click sur une image.
+
+      Utilisez les méthodes change() et trigger().
+      */
+
+        $(document).ready(function(){
+          var value;
+        $('button').mouseenter(function(event){
+          value = $(this).attr('id');
+          value = value.substring((value.length)-1,value.length);
+          $('.miniature' + value).toggle();
+          
+        });
+          $('button').click(function(event){
+            value = $(this).attr('id');
+            value = value.substring((value.length)-1,value.length);
+            $('.miniature' + value).css('display',"none")
+            $('.big' + value).toggle();
+          });
+
+          $("input:not([type=button])").click(function(){
+            value = $(this).attr('id');
+            value = value.substring((value.length)-1,value.length);
+            $('#bouton' + value).trigger('click');     
+          });
+      });
+    </script>
+	</head>
+	<body>
+    <div id="img1">
+      <button id="bouton1">Mon image 1</button>
+      <img src="../img/katana.jpg" id="minikatana" class="miniature miniature1"/>
+      <img src="../img/katana.jpg" id="big1" class="big big1"/>
+    </div>
+    <div id="img2">
+      <button id="bouton2">Mon image 2</button>
+      <img src="../img/shuriken.jpg" id="" class="miniature miniature2"/>
+      <img src="../img/shuriken.jpg" id="big2" class="big big2"/>
+    </div>
+    <div id="img3">
+      <button id="bouton3">Mon image 3</button>
+      <img src="../img/kusarigama.jpg" id="" class="miniature miniature3"/>
+      <img src="../img/kusarigama.jpg" id="big3" class="big big3"/>
+    </div>  
+
+		
+      <form action="">
+        <input type="checkbox" name="img1" value="image1" id="checkbox1" class="checkbox">first<br>
+        <input type="checkbox" name="img2" value="image2" id="checkbox2" class="checkbox">second<br>
+        <input type="checkbox" name="img3" value="image3" id="checkbox3" class="checkbox">third 
+      </form>
+
+      <noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>
+
+<!--
+
+  $(document).ready(function(){
+
+        $('button').mouseenter(function(event){
+          var value = $(this).attr('id');
+          value = value.substring((value.length)-1,value.length);
+          $('.miniature' + value).toggle();
+        });
+
+          $(this).click(function(event){
+            $('.miniature' + value).css('display',"none")
+            $('.big' + value).toggle();
+          });
+
+        $("input:not([type=button])").click(function(){
+        var valueCheck = $(this).attr('id');
+        valueCheck = valueCheck.substring((valueCheck.length)-1,valueCheck.length);
+          $('button').trigger('click');
+          console.log('message après le trigger') 
+        }); 
+
+      });
+    -->

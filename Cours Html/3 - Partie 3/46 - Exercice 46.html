@@ -1,0 +1,49 @@
+<!--
+	La modification dynamique du style consiste à modifier le CSS d'un élément quand l'utilisateur effectue sur celui-ci une action.
+	Ainsi, on peut agir au survol de l'élément de la façon suivante
+	h1:hover{
+		color: red;
+	}
+	Au survol du h1, le texte de ce h1 devient rouge.
+	On appelle :hover une pseudo-classe.
+-->
+
+<!--
+	1 - Créez un document contenant trois paragraphes de 500 caractères minimum chaque.
+	2 - Au survol du premier, la couleur du fond de ce paragraphe change.
+	3 - Au survol du second, une bordure apparait sur celui-ci.
+	4 - Au survol du troisième, ce dernier a une largeur de 50% de la fenêtre et une hauteur de 50px. Attention, le reste du texte doit être masqué !
+-->
+
+<!DOCTYPE>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link type="text/css" href="css/stylesheet.css" rel="stylesheet">
+		<title>Exercice</title>
+	</head>
+	<body>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a augue nibh. Nulla at velit lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque eget lobortis leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin vitae efficitur nisl, at tincidunt tellus. Aliquam quis pulvinar orci. Cras laoreet tellus vel dui accumsan pellentesque. Mauris volutpat diam sit amet nibh varius venenatis. Proin urna mauris, tristique nec diam eu, pellentesque pellentesque mauris. Quisque at pharetra risus. Aenean pulvinar arcu dolor, id efficitur augue sagittis non. Sed pulvinar lacus vel dolor placerat, sit amet imperdiet augue sagittis. </p>
+
+		<p>Mauris quis dignissim velit. Sed ac massa maximus, molestie eros id, maximus urna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sollicitudin congue ex. Curabitur iaculis ipsum in sem rhoncus tristique. Nam condimentum orci non tortor tincidunt consectetur ac sit amet ante. Vivamus et massa ac enim vehicula cursus. Phasellus ac semper metus. Pellentesque molestie pretium sapien nec laoreet. Nunc et diam ut lorem tristique ullamcorper. Suspendisse molestie, libero a facilisis ullamcorper, libero nibh placerat justo, et suscipit nulla augue a tellus. </p>
+
+		<p>Quisque ullamcorper, est in pharetra ultrices, neque nibh ultrices lorem, vitae bibendum sem erat eget dui. Nullam ultrices aliquam purus, vitae aliquam felis elementum ac. Aenean aliquam mauris id nisl facilisis rhoncus. Nullam tincidunt pulvinar magna sit amet elementum. Nunc at dapibus arcu. Nulla justo ante, rhoncus in dictum ut, sagittis vitae sem. Nunc luctus hendrerit tempus. Nunc hendrerit enim mauris, sit amet porttitor sapien iaculis vel. Suspendisse potenti. Aliquam orci ante, fringilla ut rutrum eu, tincidunt eget turpis.</p>
+
+	</body>
+</html>
+
+<!--
+p:hover:nth-child(1) {
+	color:red;
+}
+
+p:hover:nth-child(2) {
+	text-decoration:underline;
+	}
+
+p:last-child:hover {
+	width:50%;
+	height:50px;
+	overflow: hidden;
+}
+-->

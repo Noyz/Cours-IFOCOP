@@ -2,6 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
+    <script src="angular.min.js"></script>
     <title>AngularJS : Les Contrôleurs : Exercice 3</title>
     <script>
       //Enoncé
@@ -32,8 +33,21 @@
     </script>
   </head>
   <body>
-    <div>
-      <div></div>
+    <div ng-controller = "unknownController as monController">
+      <div ng-click="monController.methode($index)" ng-repeat="monstyle in monController.propriete1" ng-style="monController.propriete1[$index]"></div>
     </div>
+
+    <script>
+     var monModule = angular.module('noyzModule', []);
+     //Nouvelle méthode : 
+     monModule.controller('unknownController', function(){
+        this.propriete1 = [{"width":"20px", "height":"20px", "backgroundColor":"red"}, {"width":"30px", "height":"30px", "backgroundColor":"green"}, {"width":"50px", "height":"50px", "backgroundColor":"blue"}],
+        this.methode = function($index){
+          this.propriete1[$index].width = this.propriete1[$index].width += 1;
+        }
+     });
+      angular.bootstrap(window.document, ["noyzModule"], {strictDi:true});
+    </script>
+
   </body>
 </html>

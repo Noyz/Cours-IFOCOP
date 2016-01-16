@@ -2,6 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
+    <script src="angular.min.js"></script>
     <title>AngularJS : Les Formulaires : Exercice 2</title>
     <script>
       //Enoncé
@@ -65,10 +66,40 @@
     </script>
   </head>
   <body>
-    <div>
-      <form>
-        <input type="submit" value="Enregistrer"/>
+    <div ng-controller="nameLess as monController">
+      <form ng-submit="monController.methode(banana)" devalidate name="myForm">
+        <label>nom</label>
+        <input type="text" ng-model="monController.utilisateur" name="nom" required="string" ng-required="true" ng-minlength="2" ng-maxlength="128">
+        </input>
+        <label>prenom</label>
+        <input ng-model="monController.utilisateur" name="prenom" required="string" ng-required="true" ng-minlength="2" ng-maxlength="128">
+        </input>
+        <label>birthday</label>
+        <input
+          ng-model="monController.utilisateur" name="date" type="date" required="number" ng-required="true">
+        </input>
+        <label>mail</label>
+        <input
+          ng-model="monController.utilisateur"  type="email" name="mail" required="email" ng-required="true">
+        </input>
+        <input type="submit" value="touche moi!"></input>
       </form>
+      <ul>
+        <li ng-repeat="toto in monController.utilisateurs track by $index" ng-bind="monController.utilisateurs">{{toto}}</li>
+      </ul>
     </div>
+    <script>
+      var monModule = angular.module('noyzModule', []);
+      monModule.controller('nameLess', function(){
+        this.utilisateur = {};
+        this.utilisateurs = [];
+        this.methode = function(banana){
+          if(banana){
+            this.utilisateurs.push(this.utilisateur)
+          }
+        }
+      })
+      angular.bootstrap = (window.document, ['noyzModule'], {StricDi:true});
+    </script>
   </body>
 </html>

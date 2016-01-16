@@ -38,9 +38,8 @@
   <body>
     <div ng-init = "classe = {nom:'Bujinkan', specialite:'Ninjutsu', nbrInscrit: [{prenom : 'Julian', nom : 'NOYON', age :25}, {prenom : 'Thomas', nom : 'SEYMOUR', age:24}, {prenom : 'Régis', nom : 'HAYDERSAH', age:26}]}">
       <h4>Les inscrits</h4>
-      <p ng-repeat="toto in classe.nbrInscrit track by $index">{{toto}}</p>
-      <ul>
-        <li></li>
+      <ul >
+        <li ng-repeat="toto in classe.nbrInscrit track by $index" | filter:"n">{{toto}}</li>
       </ul>
       <p>Quel est le nombre d'inscrits ? : {{classe.nbrInscrit.length}}</p>
     </div>

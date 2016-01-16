@@ -168,10 +168,6 @@ $(document).ready(function(){
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   function play(){
-    $('#cadreJeu').append("<img src='imgJeu/pause.png' id='pauseButton'/>");
-    $("#pauseButton").click(function(){
-      alert('Pause');
-    })
     $("#toHide").css('display','block');
     var variable = true, variable2 = true,stopDie = true,interrupteurJump = true, addLeft =0, addUp = -370,isJumping,isSliding,glisse = true,saute = true, isDying,isIdling,isDashing, cadre = document.getElementById("cadreJeu");
     document.addEventListener('load', dash(), true);
@@ -194,19 +190,30 @@ $(document).ready(function(){
         clearInterval(defile);
         clearInterval(afficheElements);
         clearInterval(decor);
+        clearInterval(ennemie);
          die();
+          $('#cadreJeu').append("<img src='imgJeu/dead.png' id='dead' alt='Vous êtes mort'/>");
+          $('#cadreJeu').append("<img src='imgJeu/retry.png' id='retry' alt='Recommencer'/>");
         setTimeout(function(){
-          alert('Vous êtes mort !');
-          location.reload();
+          $('#dead').fadeIn(1000);
+          $('#retry').fadeIn(1000);
+          $('#retry').click(function(){
+            location.reload();
+          })
         }, 1000);
       } 
       if(monObjet.score > 8){
         clearInterval(defile);
         clearInterval(afficheElements);
         clearInterval(decor);
+        clearInterval(ennemie);
+        $('#cadreJeu').append("<img src='imgJeu/unlocked.png' id='winner' alt='Vous avez gagnée'/>");
         setTimeout(function(){
-          alert('Félicitations vous avez débloqué toutes les compétences!! Vous pouvez accédez à mon cv.');
+          $('#winner').show(1000);
+          $('#winner').click(function(){
           window.location = "CV.pdf";
+        })
+          
         }, 1000);
       }
       $('#score').text("Score actuel : " + monObjet.score);

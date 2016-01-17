@@ -169,6 +169,9 @@ $(document).ready(function(){
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   function play(){
     $("#toHide").css('display','block');
+    $("#creditsPage").css('display','none');
+    $("#controlesPage").css('display','none');
+    $("#retour").css('display','none');
     var variable = true, variable2 = true,stopDie = true,interrupteurJump = true, addLeft =0, addUp = -370,isJumping,isSliding,glisse = true,saute = true, isDying,isIdling,isDashing, cadre = document.getElementById("cadreJeu");
     document.addEventListener('load', dash(), true);
     var monObjetAudio = {
@@ -216,7 +219,7 @@ $(document).ready(function(){
           
         }, 1000);
       }
-      $('#score').text("Score actuel : " + monObjet.score);
+      $('#score').text("Score Actuel : " + monObjet.score);
       $('#nextComp').text("PV actuel : " + monObjet.pv);
 
       addLeft+=10;

@@ -978,9 +978,9 @@ $(document).ready(function(){
   if ($(this).attr("tooltip") !== undefined && $(this).attr("tooltip") !== '') {
     var tooltip = $(this).attr("tooltip");
     $("body").prepend('<div id="tooltip" class="tooltip"><div id="tooltipCone"></div><!---><div id="tooltipZone"class="tooltip">'+tooltip+'</div></div>');
-    $('#tooltipZone').css({backgroundColor: 'rgba(44, 62, 80, 1)', display: 'inline-block', position: 'relative', borderRadius: 5+'px', padding : 8+'px'});
-    $('#tooltipCone').css({position: 'absolute', height: 0 + 'px', width: 0+'px', display: 'inline-block', borderStyle: 'solid', borderWidth: '0 8px 10px 8px', borderColor: 'transparent transparent rgba(44, 62, 80, 1) transparent', zIndex: 3});
-    $("#tooltip").css({position: 'absolute', display: 'none', zIndex: 10, color: 'white', height: 42+'px'});
+    $('#tooltipZone').css({backgroundColor: 'rgba(63, 62, 62, 0.8)', display: 'inline-block', position: 'relative', borderRadius: 5+'px', padding : 8+'px'});
+    $('#tooltipCone').css({position: 'absolute', height: 0 + 'px', width: 0+'px', display: 'inline-block', borderStyle: 'solid', borderWidth: '0 8px 10px 8px', borderColor: 'transparent transparent rgba(63, 62, 62, 0.8) transparent', zIndex: 3});
+    $("#tooltip").css({position: 'absolute', display: 'none', zIndex: 10, color: 'white', height: 42+'px', fontFamily:"Tropicana"});
     $('#tooltipZone').css({bottom : -10+'px'});
     $("#tooltipCone").css({left: $("#tooltip").outerWidth()/2 - 8+'px'});
     $("#tooltip").css({top: $(this).offset().top + $(this).height() + 20, left: $(this).offset().left - $("#tooltip").outerWidth()/2 + $(this).innerWidth()/2});

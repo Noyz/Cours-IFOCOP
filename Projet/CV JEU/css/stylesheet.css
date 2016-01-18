@@ -22,9 +22,7 @@ font-style: normal;
 }
 
 body {
-	background: url("../imgJeu/tropical.jpg");
-	background-position:fixed;
-	background-repeat:no-repeat;
+	background: url("../imgJeu/tropical.jpg") fixed;
 	background-size:cover;
 	margin:0;
 }

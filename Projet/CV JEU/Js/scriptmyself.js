@@ -1,6 +1,6 @@
 window.onload = function(){
 	setInterval(function(){
-		if(window.pageYOffset > 690){
+		if(window.pageYOffset > window.pageYOffset / 2){
 			$('#magic span:first-child').fadeIn(1000);
 			$('#second').delay(3000).fadeIn(1000);
 			$('#third').delay(6000).fadeIn(1000);
